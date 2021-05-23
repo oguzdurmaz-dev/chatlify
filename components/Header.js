@@ -2,7 +2,7 @@ import { FaSignInAlt } from "react-icons/fa";
 export default function HeaderPage({ displayName,photoURL,signOut}) {
   return (
     <>
-      <nav className="w-full h-10 bg-gray-900 flex justify-between items-center">
+      <nav className="w-full h-10 bg-gray-900 flex justify-between items-center fixed">
         <div className="flex justify-center items-center">
           {photoURL ? (
              <img

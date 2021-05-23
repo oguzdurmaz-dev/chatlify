@@ -46,7 +46,7 @@ export default function Channel({ user = null, db = null }) {
     <>
       <div
         className="overflow-auto px-1 py-1"
-        style={{ height: "80vh" }}
+        style={{ height: "80vh",'paddingTop': '50px' }}
         id="journal-scroll"
       >
         {messages.map((message) => (
@@ -61,7 +61,7 @@ export default function Channel({ user = null, db = null }) {
 
       <form
         className="flex justify-between items-center p-1"
-        onSubmit={handleOnSubmit}
+        onSubmit={handleOnSubmit} style={{'paddingTop': '15px'}}
       >
         <div className="relative w-full">
           <input

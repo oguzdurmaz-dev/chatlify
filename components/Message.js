@@ -11,7 +11,7 @@ export default function Message({
     
     
     {user.displayName===displayName?
-    <div className="flex justify-end pt-2 pl-10">
+    <div className="flex justify-end pt-2 pl-10 mb-3">
     {" "}
     <span
       className="bg-green-900 h-auto text-gray-200 text-xs font-normal p-1 rounded-sm px-1 items-end flex justify-end "
