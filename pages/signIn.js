@@ -2,7 +2,11 @@ import Button from "../components/Button"
 import Image from "next/image"
 import styles from "../styles/SignIn.module.css"
 import FooterPage from "../components/Footer";
-export default function SignInPage({signInWithGoogle}) {
+export default function SignInPage({signInWithGoogle,
+    title,
+    keywords,
+    description,
+    }) {
     return (
         <div className="h-screen bg-gray-300">
             <div className={styles.signInContainer}>
@@ -14,3 +18,11 @@ export default function SignInPage({signInWithGoogle}) {
         </div>
     )
 }
+
+SignInPage.defaultProps = {
+    title:
+      "Chattify 1.0 | The easiest way to chat with people all around the world.",
+    description: "Talk the buddies around the world!",
+    keywords:
+      "nextjs chat, nextjs firebase chat, nextjs chat, nextjs messenger, tailwind nextjs messenger",
+  };
