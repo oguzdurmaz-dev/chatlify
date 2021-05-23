@@ -1,24 +1,16 @@
 import firebase from "firebase/app";
 import Message from "./Message";
 import styles from "../styles/Channel.module.css"
-import { useState, useEffect ,useRef} from "react";
+import { useState, useEffect } from "react";
 
 import { FaRegPaperPlane } from "react-icons/fa";
 
 export default function Channel({ user = null, db = null }) {
-  
-  const messagesEndRef = useRef(null);
-  const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
 
   const { uid, displayName, photoURL } = user;
   useEffect(() => {
-    scrollToBottom();
     if (db) {
       const unsubscribe = db
         .collection("messages")
@@ -33,7 +25,7 @@ export default function Channel({ user = null, db = null }) {
         });
       return unsubscribe;
     }
-  }, [db,messages]);
+  }, [db]);
 
   const handleOnChange = (e) => {
     setNewMessage(e.target.value);
@@ -66,7 +58,6 @@ export default function Channel({ user = null, db = null }) {
         <div className="" id="chatmsg">
           {" "}
         </div>
-        <div ref={messagesEndRef} />
       </div>
 
       <form
