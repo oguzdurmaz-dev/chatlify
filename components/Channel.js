@@ -46,7 +46,7 @@ export default function Channel({ user = null, db = null }) {
     <>
       <div
         className="overflow-auto px-1 py-1"
-        style={{ height: "80vh",'paddingTop': '50px' }}
+        style={{ height: "87vh" }}
         id="journal-scroll"
       >
         {messages.map((message) => (

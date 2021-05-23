@@ -12,7 +12,7 @@ export default function Layout({
 }) {
   const { displayName, photoURL } = user;
   return (
-    <div className="h-screen bg-gray-300">
+    <div className="h-screen bg-gray-300 fixed">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
