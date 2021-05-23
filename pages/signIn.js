@@ -1,6 +1,7 @@
 import Button from "../components/Button"
 import Image from "next/image"
 import styles from "../styles/SignIn.module.css"
+import FooterPage from "../components/Footer";
 export default function SignInPage({signInWithGoogle}) {
     return (
         <div className="h-screen bg-gray-300">
@@ -9,6 +10,7 @@ export default function SignInPage({signInWithGoogle}) {
             <p>The easiest way to chat with people all around the world.</p>
             <Button onClick={signInWithGoogle}>Sign in with Google</Button>
             </div>
+            <div><FooterPage/></div>
         </div>
     )
 }
