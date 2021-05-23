@@ -64,7 +64,7 @@ export default function Channel({ user = null, db = null }) {
         onSubmit={handleOnSubmit} style={{'paddingTop': '15px'}}
       >
         <div className="relative w-full">
-          <input
+          <input autoComplete="off"
             type="text"
             value={newMessage}
             onChange={handleOnChange}
