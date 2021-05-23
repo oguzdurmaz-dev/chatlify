@@ -9,9 +9,8 @@ export default function Channel({ user = null, db = null }) {
   
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current.scrollIntoView({ behavior: "auto" });
   };
-
 
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
