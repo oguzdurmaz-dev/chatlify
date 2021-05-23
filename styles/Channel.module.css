@@ -1,0 +1,10 @@
+.heightMatch {
+    height: 85vh;
+    margin-top: 45px;
+
+}
+@media only screen and (max-width: 1024px) {
+    .heightMatch {
+        height: 83vh;
+    }
+  }
