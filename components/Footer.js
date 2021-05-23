@@ -5,7 +5,7 @@ export default function FooterPage() {
       style={{ 'bottom': "0" , "position": "absolute"}}
     >
       <h2 style={{ "fontSize": "13px" }}>
-        Chatlify 1.0 - Built by Oguz Durmaz
+        Chatlify - Oguz Durmaz
       </h2>
     </div>
   );

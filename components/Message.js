@@ -6,6 +6,7 @@ export default function Message({
   photoURL = "",
   user
 }) {
+  console.log(text)
   return (
     <>
     

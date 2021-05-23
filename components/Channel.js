@@ -22,7 +22,7 @@ export default function Channel({ user = null, db = null }) {
       const unsubscribe = db
         .collection("messages")
         .orderBy("createdAt")
-        .limit(100)
+        .limit(50)
         .onSnapshot((querySnapshot) => {
           const data = querySnapshot.docs.map((doc) => ({
             ...doc.data(),
