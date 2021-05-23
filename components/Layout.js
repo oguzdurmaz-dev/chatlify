@@ -1,7 +1,5 @@
 import Head from "next/head";
-
 import HeaderPage from "./Header";
-import FooterPage from "./Footer";
 export default function Layout({
   user,
   title,
@@ -26,7 +24,7 @@ export default function Layout({
             signOut={signOut}
           />
           <div>{children}</div>
-          <FooterPage />
+
         </div>
       </div>
     </div>
