@@ -1,6 +1,9 @@
 import firebase from "firebase/app";
 import Message from "./Message";
 import { useState, useEffect } from "react";
+
+import { FaRegPaperPlane } from "react-icons/fa";
+
 export default function Channel({ user = null, db = null }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -41,23 +44,42 @@ export default function Channel({ user = null, db = null }) {
   };
   return (
     <>
-      <ul>
+      <div
+        className="overflow-auto px-1 py-1"
+        style={{ height: "80vh" }}
+        id="journal-scroll"
+      >
         {messages.map((message) => (
-          <li key={message.id}>
-            <Message {...message} />
-          </li>
+          
+            <Message key={message.id} user={user} {...message} />
+        
         ))}
-      </ul>
-      <form onSubmit={handleOnSubmit}>
-        <input
-          type="text"
-          value={newMessage}
-          onChange={handleOnChange}
-          placeholder="type your message here"
-        />
-        <button type="submit" disabled={!newMessage}>
-          Send
-        </button>
+        <div className="" id="chatmsg">
+          {" "}
+        </div>
+      </div>
+
+      <form
+        className="flex justify-between items-center p-1"
+        onSubmit={handleOnSubmit}
+      >
+        <div className="relative w-full">
+          <input
+            type="text"
+            value={newMessage}
+            onChange={handleOnChange}
+            type="text"
+            className="rounded-full pl-6 pr-12 py-2 w-full focus:outline-none h-auto placeholder-gray-100 bg-gray-900 text-white"
+            style={{ "fontSize": "11px" }}
+            placeholder="Type a message..."
+            id="typemsg"
+          />{" "}
+        </div>
+        <div className="w-7 h-7 rounded-full bg-blue-300 text-center items-center flex justify-center hover:bg-gray-900 hover:text-white">
+          <button type="submit" disabled={!newMessage}>
+            <FaRegPaperPlane />
+          </button>
+        </div>
       </form>
     </>
   );

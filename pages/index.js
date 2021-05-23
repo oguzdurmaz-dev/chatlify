@@ -1,21 +1,14 @@
-import styles from "../styles/Home.module.css";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import { useState, useEffect } from "react";
-import Button from "../components/Button"
+import SignInPage from "./signIn"
 import Channel from "../components/Channel"
-
-firebase.initializeApp({
-  apiKey: "AIzaSyCQEwyTSBM4MhXDgdZDqOQ9mP1_3XAsyLo",
-  authDomain: "chatty-e3b1b.firebaseapp.com",
-  projectId: "chatty-e3b1b",
-  storageBucket: "chatty-e3b1b.appspot.com",
-  messagingSenderId: "852425289321",
-  appId: "1:852425289321:web:f86a964ee79a4c09533cf8",
-});
+import "../firebaseSettings.js" 
+import Layout from "../components/Layout"
 const auth = firebase.auth();
 const db = firebase.firestore();
+
 export default function Home() {
   const [user, setUser] = useState(() => auth.currentUser);
   const [initializing, setInitializing] = useState(true);
@@ -56,14 +49,13 @@ export default function Home() {
     }
   };
   return (
-    <div className={styles.container}>
+   <div>
       {user !== null ? (
-        <>
-          <Button onClick={signOut}>Sign out</Button>
+         <Layout user={user} signOut={signOut}>
           <Channel user={user} db={db} />
-        </>
+        </Layout>
       ) : (
-        <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+        <SignInPage signInWithGoogle={signInWithGoogle}/>
       )}
     </div>
   );

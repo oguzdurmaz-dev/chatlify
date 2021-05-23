@@ -1,0 +1,16 @@
+.signInContainer {
+    margin: auto;
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 230px;
+}
+.signInContainer p {
+    padding: 16px;
+    font-weight: bold;
+    color: #616189;
+}
