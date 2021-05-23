@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import Message from "./Message";
+import styles from "../styles/Channel.module.css"
 import { useState, useEffect } from "react";
 
 import { FaRegPaperPlane } from "react-icons/fa";
@@ -45,8 +46,8 @@ export default function Channel({ user = null, db = null }) {
   return (
     <>
       <div
-        className="overflow-auto px-1 py-1"
-        style={{ height: "83vh"}}
+        className={`overflow-auto px-1 py-1 ${styles.heightMatch}`}
+       
         id="journal-scroll"
       >
         {messages.map((message) => (
