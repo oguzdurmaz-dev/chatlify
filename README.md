@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Next JS +  Firebase + Tailwind
 
+<h1><a href="https://chatlify-eight.vercel.app">LIVE DEMO</a></h1>
+
 ## Getting Started
 
 First, run the development server:
